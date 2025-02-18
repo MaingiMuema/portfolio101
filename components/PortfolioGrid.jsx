@@ -19,7 +19,7 @@ const featuredProjects = [
     url: "https://on-the-know.vercel.app/",
   },
   {
-    name: "Portfolio",
+    name: "FTUSDT",
     image: "/Portfolio.png",
     url: "https://maingimuema.vercel.app/",
   },
