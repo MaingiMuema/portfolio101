@@ -34,6 +34,16 @@ const featuredProjects = [
     url: "https://forecast254.vercel.app/",
   },
   {
+    name: "Aminiblock",
+    image: "/Aminiblock.png",
+    url: "https://aminiblock101.vercel.app/",
+  },
+  {
+    name: "Forecast254",
+    image: "/forecast254.png",
+    url: "https://forecast254.vercel.app/",
+  },
+  {
     name: "PropertyFinder",
     image: "/Propertyfinder.png",
     url: "https://www.propertyfinder.ke",
