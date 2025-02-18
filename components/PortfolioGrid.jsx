@@ -252,7 +252,7 @@ export default function PortfolioGrid() {
         </h3>
         <ul className="space-y-6 relative z-10">
           {featuredProjects
-            .slice(0, showAllProjects ? featuredProjects.length : 4)
+            .slice(0, showAllProjects ? featuredProjects.length : 8)
             .map((project, index) => (
               <li key={index} className="group">
                 <a
@@ -280,7 +280,7 @@ export default function PortfolioGrid() {
                       />
                     </svg>
                   </div>
-                  <div className="overflow-hidden h-0 group-hover:h-32 transition-all duration-300">
+                  <div className="lg:h-0 h-32 lg:group-hover:h-32 transition-all duration-300 overflow-hidden">
                     <img
                       src={project.image}
                       alt={project.name}
@@ -324,7 +324,7 @@ export default function PortfolioGrid() {
             </h3>
             <div className="flex flex-col space-y-4">
               <a
-                href="https://wa.me/254112246573" // Replace with your WhatsApp number
+                href="https://wa.me/254112246573"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center bg-green-500 text-white py-3 px-6 rounded-lg hover:bg-green-600 transition-colors duration-300"
@@ -333,7 +333,7 @@ export default function PortfolioGrid() {
                 Contact via WhatsApp
               </a>
               <a
-                href="tel:+254112246573" // Replace with your phone number
+                href="tel:+254112246573"
                 className="flex items-center justify-center bg-blue-500 text-white py-3 px-6 rounded-lg hover:bg-blue-600 transition-colors duration-300"
               >
                 <FaPhone className="mr-3 text-xl" />
