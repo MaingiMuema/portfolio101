@@ -19,9 +19,19 @@ const featuredProjects = [
     url: "https://usd-flash.vercel.app/",
   },
   {
+    name: "Forecast254",
+    image: "/forecast254.png",
+    url: "https://forecast254.vercel.app/",
+  },
+  {
     name: "FlashSlides",
     image: "/flashslides.png",
     url: "https://on-the-know.vercel.app/",
+  },
+  {
+    name: "PropertyFinder",
+    image: "/Propertyfinder.png",
+    url: "https://www.propertyfinder.ke",
   },
   {
     name: "Aminiblock",
@@ -32,16 +42,6 @@ const featuredProjects = [
     name: "Explorer Game",
     image: "/explorer.png",
     url: "https://simple-plane-game.vercel.app/",
-  },
-  {
-    name: "Forecast254",
-    image: "/forecast254.png",
-    url: "https://forecast254.vercel.app/",
-  },
-  {
-    name: "PropertyFinder",
-    image: "/Propertyfinder.png",
-    url: "https://www.propertyfinder.ke",
   },
   {
     name: "FTUSDT",
