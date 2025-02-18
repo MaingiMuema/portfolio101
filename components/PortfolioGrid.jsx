@@ -20,8 +20,8 @@ const featuredProjects = [
   },
   {
     name: "FTUSDT",
-    image: "/Portfolio.png",
-    url: "https://maingimuema.vercel.app/",
+    image: "/FTUSDT.png",
+    url: "https://ftusdt.vercel.app/",
   },
   {
     name: "Ecommerce",
