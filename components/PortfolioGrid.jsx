@@ -24,9 +24,9 @@ const featuredProjects = [
     url: "https://ftusdt.vercel.app/",
   },
   {
-    name: "Ecommerce",
-    image: "/Ecommerce.png",
-    url: "https://ecommerce-1a6d8.web.app/",
+    name: "Aminiblock",
+    image: "/Aminiblock.png",
+    url: "https://aminiblock101.vercel.app/",
   },
   {
     name: "Forecast254",
