@@ -14,6 +14,11 @@ import { useState } from "react";
 // Define the projects array
 const featuredProjects = [
   {
+    name: "USD-Flash",
+    image: "/usd-flash.png",
+    url: "https://usd-flash.vercel.app/",
+  },
+  {
     name: "FlashSlides",
     image: "/flashslides.png",
     url: "https://on-the-know.vercel.app/",
@@ -29,12 +34,7 @@ const featuredProjects = [
     url: "https://aminiblock101.vercel.app/",
   },
   {
-    name: "Forecast254",
-    image: "/forecast254.png",
-    url: "https://forecast254.vercel.app/",
-  },
-  {
-    name: "Aminiblock",
+    name: "Explorer Game",
     image: "/Aminiblock.png",
     url: "https://aminiblock101.vercel.app/",
   },
