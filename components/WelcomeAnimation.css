@@ -1,103 +1,162 @@
 .welcome-animation {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: #0f0f0f;
-    color: #ffffff;
-    z-index: 9999;
-    overflow: hidden;
-    perspective: 1500px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(
+    circle at center,
+    #1a1a1a 0%,
+    #0f0f0f 60%,
+    #000000 100%
+  );
+  color: #ffffff;
+  z-index: 9999;
+  overflow: hidden;
+  perspective: 2000px;
+  cursor: default;
+}
+
+.welcome-animation.fade-out {
+  opacity: 0;
+  transition: opacity 1s ease-out;
 }
 
 .content-wrapper {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transform-style: preserve-3d;
-    animation: rotateScene 30s infinite linear;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .element {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform-style: preserve-3d;
-    transition: transform 1s ease;
+  position: absolute;
+  transform-style: preserve-3d;
+  opacity: 0;
+  visibility: hidden;
+  filter: blur(10px);
+  text-shadow: 0 0 20px rgba(239, 179, 7, 0.3);
+  user-select: none;
+  will-change: transform, opacity, filter;
+  transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out,
+    filter 0.8s ease-in-out, transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.welcome-text { transform: translate3d(-50%, -50%, 500px); }
-.to-text { transform: translate3d(-50%, -50%, 0); }
-.app-name { transform: translate3d(-50%, -50%, -500px); }
-.interactive-element { transform: translate3d(-50%, -50%, 300px); }
-
-.welcome-text, .to-text, .app-name {
-    font-size: 4rem;
-    white-space: nowrap;
-    opacity: 0.1;
-    transition: opacity 0.5s ease;
+.element.visible {
+  opacity: 1;
+  visibility: visible;
+  filter: blur(0);
+  animation: textAppear 0.8s ease-out forwards;
 }
 
-.welcome-text.animate, .to-text.animate, .app-name.animate {
-    opacity: 1;
+.welcome-text,
+.to-text,
+.app-name {
+  font-size: 5rem;
+  background: linear-gradient(
+    45deg,
+    #efb307,
+    #ffdb78 25%,
+    #efb307 50%,
+    #ffdb78 75%,
+    #efb307
+  );
+  background-size: 250% 250%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientFlow 8s linear infinite;
+  backface-visibility: hidden;
+  white-space: nowrap;
+}
+
+.to-text {
+  font-size: 4rem;
 }
 
 .app-name {
-    font-size: 6rem;
-    font-weight: 800;
-    background: linear-gradient(45deg, #efb307, #ffdb78);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.interactive-element {
-    font-size: 1.8rem;
-    padding: 12px 36px;
-    background: linear-gradient(45deg, #efb307, #fccd4d);
-    color: #ffffff;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    opacity: 0;
-}
-
-.interactive-element.animate {
-    opacity: 1;
-}
-
-.interactive-element:hover {
-    transform: translate3d(-50%, -50%, 350px) scale(1.1);
-    box-shadow: 0 0 30px #efb107b2;
+  font-size: 7rem;
+  font-weight: 800;
+  letter-spacing: 2px;
 }
 
 .particle {
-    position: absolute;
-    width: 5px;
-    height: 5px;
-    background: #efb307;
-    border-radius: 50%;
-    pointer-events: none;
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+  box-shadow: 0 0 15px currentColor;
+  z-index: 0;
 }
 
-@keyframes rotateScene {
-    0% { transform: rotateY(0) rotateX(0); }
-    100% { transform: rotateY(360deg) rotateX(360deg); }
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 250% 50%;
+  }
 }
 
-@keyframes floatParticle {
-    0%, 100% { transform: translateZ(0); }
-    50% { transform: translateZ(500px); }
+@keyframes textAppear {
+  0% {
+    opacity: 0;
+    transform: translate3d(-50%, -50%, -100px) scale(0.8);
+    filter: blur(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(-50%, -50%, 0) scale(1);
+    filter: blur(0);
+  }
 }
 
+/* Add ambient light effect */
 .welcome-animation::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(circle at center, transparent 0%, rgba(15, 15, 15, 0.9) 100%);
-    z-index: 1;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    circle at calc(50% + calc(var(--mouse-x, 0) * 30%))
+      calc(50% + calc(var(--mouse-y, 0) * 30%)),
+    rgba(239, 179, 7, 0.1) 0%,
+    transparent 40%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .welcome-text {
+    font-size: 3.5rem;
+  }
+
+  .to-text {
+    font-size: 3rem;
+  }
+
+  .app-name {
+    font-size: 5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .welcome-text {
+    font-size: 2.5rem;
+  }
+
+  .to-text {
+    font-size: 2rem;
+  }
+
+  .app-name {
+    font-size: 3.5rem;
+  }
 }
