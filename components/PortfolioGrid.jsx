@@ -15,7 +15,7 @@ import { useState } from "react";
 const featuredProjects = [
   {
     name: "FlashSlides",
-    image: "/Covid19Tracker.png",
+    image: "/flashslides.png",
     url: "https://on-the-know.vercel.app/",
   },
   {
