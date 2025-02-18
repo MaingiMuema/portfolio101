@@ -14,6 +14,21 @@ import { useState } from "react";
 // Define the projects array
 const featuredProjects = [
   {
+    name: "FlashSlides",
+    image: "/Covid19Tracker.png",
+    url: "https://on-the-know.vercel.app/",
+  },
+  {
+    name: "Portfolio",
+    image: "/Portfolio.png",
+    url: "https://maingimuema.vercel.app/",
+  },
+  {
+    name: "Ecommerce",
+    image: "/Ecommerce.png",
+    url: "https://ecommerce-1a6d8.web.app/",
+  },
+  {
     name: "Forecast254",
     image: "/forecast254.png",
     url: "https://forecast254.vercel.app/",
