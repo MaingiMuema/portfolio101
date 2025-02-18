@@ -34,6 +34,11 @@ const featuredProjects = [
     url: "https://www.propertyfinder.ke",
   },
   {
+    name: "Perpetua",
+    image: "/perpetua.png",
+    url: "https://perpetua-steel.vercel.app/",
+  },
+  {
     name: "Aminiblock",
     image: "/Aminiblock.png",
     url: "https://aminiblock101.vercel.app/",
@@ -53,6 +58,11 @@ const featuredProjects = [
     name: "VectorAfriq",
     image: "/VectorAfriq.png",
     url: "https://vectorafriqproperties.co.ke",
+  },
+  {
+    name: "Zeno's",
+    image: "/zeno-s.png",
+    url: "https://zeno-s.vercel.app/",
   },
   {
     name: "Brandlogs",
@@ -232,6 +242,8 @@ export default function PortfolioGrid() {
                 <li>Laravel</li>
                 <li>Postgresql</li>
                 <li>MongoDB</li>
+                <li>LangChain</li>
+                <li>AI Agents Development</li>
                 <li>RESTful APIs</li>
               </ul>
             </div>
