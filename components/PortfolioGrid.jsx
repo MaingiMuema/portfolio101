@@ -221,7 +221,7 @@ export default function PortfolioGrid() {
               <ul className="list-disc list-inside text-gray-800">
                 <li>HTML5 & CSS3</li>
                 <li>JavaScript (ES6+)</li>
-                <li>React</li>
+                <li>ReactJs</li>
                 <li>Figma</li>
                 <li>Relume</li>
                 <li>WordPress(Elementor)</li>
