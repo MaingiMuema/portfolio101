@@ -222,7 +222,10 @@ export default function PortfolioGrid() {
                 <li>HTML5 & CSS3</li>
                 <li>JavaScript (ES6+)</li>
                 <li>React</li>
-                <li>ReactNative</li>
+                <li>Figma</li>
+                <li>Relume</li>
+                <li>WordPress(Elementor)</li>
+                <li>ReactNative(Expo)</li>
                 <li>Next.js</li>
                 <li>Tailwind CSS</li>
                 <li>Bootstrap v5</li>
@@ -235,6 +238,7 @@ export default function PortfolioGrid() {
                 <li>Node.js</li>
                 <li>Express</li>
                 <li>Supabase</li>
+                <li>Manim</li>
                 <li>PHP</li>
                 <li>C</li>
                 <li>Wordpress</li>
