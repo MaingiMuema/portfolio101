@@ -24,19 +24,14 @@ const featuredProjects = [
     url: "https://on-the-know.vercel.app/",
   },
   {
-    name: "FTUSDT",
-    image: "/FTUSDT.png",
-    url: "https://ftusdt.vercel.app/",
-  },
-  {
     name: "Aminiblock",
     image: "/Aminiblock.png",
     url: "https://aminiblock101.vercel.app/",
   },
   {
     name: "Explorer Game",
-    image: "/Aminiblock.png",
-    url: "https://aminiblock101.vercel.app/",
+    image: "/explorer.png",
+    url: "https://simple-plane-game.vercel.app/",
   },
   {
     name: "Forecast254",
@@ -47,6 +42,11 @@ const featuredProjects = [
     name: "PropertyFinder",
     image: "/Propertyfinder.png",
     url: "https://www.propertyfinder.ke",
+  },
+  {
+    name: "FTUSDT",
+    image: "/FTUSDT.png",
+    url: "https://ftusdt.vercel.app/",
   },
   { name: "Credwave", image: "/Credwave.png", url: "https://www.credwave.com" },
   {
