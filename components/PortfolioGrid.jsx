@@ -100,7 +100,7 @@ export default function PortfolioGrid() {
   };
 
   return (
-    <div className="flex flex-col lg:flex-row gap-4 p-10 pt-2 bg-gradient-to-br from-gray-100 to-gray-200 min-h-screen">
+    <div className="flex flex-col lg:flex-row gap-4 p-10 pt-2 bg-gradient-to-br from-white-100 to-white-200 min-h-screen">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 flex-grow">
         {/* Introduction Card */}
         <motion.div
@@ -222,6 +222,8 @@ export default function PortfolioGrid() {
                 <li>HTML5 & CSS3</li>
                 <li>JavaScript (ES6+)</li>
                 <li>ReactJs</li>
+                <li>ThreeJs & React Three Fibre</li>
+                <li>Manim</li>
                 <li>Figma</li>
                 <li>Relume</li>
                 <li>WordPress(Elementor)</li>
@@ -238,7 +240,6 @@ export default function PortfolioGrid() {
                 <li>Node.js</li>
                 <li>Express</li>
                 <li>Supabase</li>
-                <li>Manim</li>
                 <li>PHP</li>
                 <li>C</li>
                 <li>Wordpress</li>
