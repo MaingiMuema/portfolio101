@@ -240,6 +240,7 @@ export default function PortfolioGrid() {
                 <li>Node.js</li>
                 <li>Express</li>
                 <li>Supabase</li>
+                <li>Django</li>
                 <li>PHP</li>
                 <li>C</li>
                 <li>Wordpress</li>
