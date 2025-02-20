@@ -223,7 +223,7 @@ export default function PortfolioGrid() {
                 <li>JavaScript (ES6+)</li>
                 <li>ReactJs</li>
                 <li>ThreeJs & React Three Fibre</li>
-                <li>Manim</li>
+                <li>Manim(Python)</li>
                 <li>Figma</li>
                 <li>Relume</li>
                 <li>WordPress(Elementor)</li>
