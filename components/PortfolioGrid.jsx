@@ -226,7 +226,7 @@ export default function PortfolioGrid() {
                 <li>Manim(Python)</li>
                 <li>Figma</li>
                 <li>Relume</li>
-                <li>WordPress(Elementor)</li>
+                <li>WordPress</li>
                 <li>ReactNative(Expo)</li>
                 <li>Next.js</li>
                 <li>Tailwind CSS</li>
