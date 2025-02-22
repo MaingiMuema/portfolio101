@@ -64,11 +64,6 @@ const featuredProjects = [
     image: "/zeno-s.png",
     url: "https://zeno-s.vercel.app/",
   },
-  {
-    name: "Brandlogs",
-    image: "/Brandlogs.png",
-    url: "https://www.brandlogs.com",
-  },
   { name: "SCFF", image: "/SCFF.png", url: "https://www.scff.llc" },
 ];
 
