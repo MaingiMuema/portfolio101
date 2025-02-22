@@ -116,8 +116,8 @@ const WelcomeAnimation = ({ onAnimationComplete }) => {
   const getTextStyle = (baseTransform) => ({
     transform: `
       translate3d(
-        calc(-50% + ${mousePosition.x * -30}px),
-        calc(-50% + ${mousePosition.y * -30}px),
+        ${mousePosition.x * -30}px,
+        ${mousePosition.y * -30}px,
         ${baseTransform}px
       )`,
   });
