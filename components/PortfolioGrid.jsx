@@ -249,7 +249,7 @@ export default function PortfolioGrid() {
                 <li>Postgresql</li>
                 <li>MongoDB</li>
                 <li>LangChain</li>
-                <li>AI Agents Development</li>
+                <li>AI Agents</li>
                 <li>RESTful APIs</li>
               </ul>
             </div>
