@@ -237,6 +237,7 @@ export default function PortfolioGrid() {
                 <li>Supabase</li>
                 <li>Django</li>
                 <li>PHP</li>
+                <li>MySQL</li>
                 <li>C</li>
                 <li>Wordpress</li>
                 <li>CPANEL</li>
