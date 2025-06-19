@@ -18,6 +18,11 @@ const featuredProjects = [
     image: "/shulenet.png",
     url: "https://shulenetwork.co.ke/",
   },
+    {
+    name: "PropertyFinder",
+    image: "/Propertyfinder.png",
+    url: "https://www.propertyfinder.ke",
+  },
   {
     name: "USD-Flash",
     image: "/usd-flash.png",
@@ -32,11 +37,6 @@ const featuredProjects = [
     name: "FlashSlides",
     image: "/flashslides.png",
     url: "https://on-the-know.vercel.app/",
-  },
-  {
-    name: "PropertyFinder",
-    image: "/Propertyfinder.png",
-    url: "https://www.propertyfinder.ke",
   },
   {
     name: "Perpetua",
