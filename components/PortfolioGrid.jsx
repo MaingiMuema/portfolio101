@@ -14,6 +14,11 @@ import { useState } from "react";
 // Define the projects array
 const featuredProjects = [
   {
+    name: "Shulenetwork",
+    image: "/shulenet.png",
+    url: "https://shulenetwork.co.ke/",
+  },
+  {
     name: "USD-Flash",
     image: "/usd-flash.png",
     url: "https://usd-flash.vercel.app/",
