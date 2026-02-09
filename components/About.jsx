@@ -84,20 +84,25 @@ const About = () => {
           </h3>
 
           <div className="space-y-4 md:space-y-6">
-                        <div className="mb-8 bg-gray-50 p-6 rounded-lg">
-              <h4 className="text-xl font-medium text-gray-800">
-                Founder & Full-time Developer | Shulenetwork
-              </h4>
+            <div className="mb-8 bg-gray-50 p-6 rounded-lg">
+              <div className="flex items-center gap-4 mb-2">
+                <img src="/learnwise.png" alt="Learnwise Technologies" className="w-10 h-10 rounded-lg object-contain" />
+                <h4 className="text-xl font-medium text-gray-800">
+                  Founder & Full-time Developer | Learnwise Technologies
+                </h4>
+              </div>
               <p className="italic text-gray-600 mb-4">
                 February 2025 - Present
               </p>
               <p className="text-gray-700">
-                Developing and maintaining Shulenetwork, a platform that connects
-                schools with parents, students, and teachers to enhance
-                communication and collaboration in the education sector.
+                Developing and maintaining Learnwise Technologies, a platform
+                that provides schools with innovative products including school
+                management tools, digital learning resources, and educational
+                technology solutions to streamline operations and enhance the
+                learning experience.
               </p>
 
-              <p>Checkout shulenetwork from: <a href="https://shulenetwork.co.ke" className="text-blue-600 hover:underline">shulenetwork.co.ke</a></p>
+              <p>Checkout Learnwise Technologies from: <a href="https://www.learnwisetech.com/" className="text-blue-600 hover:underline">learnwise.co.ke</a></p>
             </div>
 
             <div className="mb-8 bg-gray-50 p-6 rounded-lg">

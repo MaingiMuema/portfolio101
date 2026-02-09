@@ -14,11 +14,11 @@ import { useState } from "react";
 // Define the projects array
 const featuredProjects = [
   {
-    name: "Shulenetwork",
-    image: "/shulenet.png",
-    url: "https://shulenetwork.co.ke/",
+    name: "Learnwise Technologies",
+    image: "/learnwise.png",
+    url: "https://www.learnwisetech.com/",
   },
-    {
+  {
     name: "PropertyFinder",
     image: "/Propertyfinder.png",
     url: "https://www.propertyfinder.ke",
