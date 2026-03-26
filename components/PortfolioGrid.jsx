@@ -224,14 +224,17 @@ export default function PortfolioGrid() {
             <div className="grid gap-6 p-3 md:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] md:p-6">
               <div className="overflow-hidden rounded-xl bg-gray-900/85">
                 <video
-                  src={conceptLabTeaser.video}
                   autoPlay
                   loop
                   muted
                   playsInline
-                  preload="metadata"
+                  preload="auto"
+                  poster="/Mark.jpeg"
                   className="aspect-video h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
-                />
+                >
+                  <source src={conceptLabTeaser.video} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
               </div>
               <div className="flex flex-col justify-center p-3 md:p-0">
                 <p className="text-sm font-semibold uppercase tracking-[0.25em] text-gray-800 mb-4">

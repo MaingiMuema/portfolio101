@@ -1,1 +1,2 @@
-public/*.mp4 filter=lfs diff=lfs merge=lfs -text
+public/EasyUshuru.mp4 filter=lfs diff=lfs merge=lfs -text
+public/Sparkmind.mp4 filter=lfs diff=lfs merge=lfs -text
