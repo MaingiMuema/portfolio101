@@ -1,0 +1,528 @@
+.shell {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  overflow: hidden;
+  isolation: isolate;
+  color: #f7f6f1;
+  background: #04060b;
+}
+
+.backdrop {
+  position: absolute;
+  inset: -8%;
+}
+
+.mesh {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.03), transparent 42%),
+    radial-gradient(circle at 82% 18%, rgba(112, 112, 112, 0.28), transparent 32%),
+    radial-gradient(circle at 18% 78%, rgba(239, 179, 7, 0.2), transparent 28%);
+  opacity: 0.92;
+}
+
+.grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 88px 88px;
+  opacity: 0.14;
+  mask-image: radial-gradient(circle at center, black 32%, transparent 84%);
+}
+
+.scanline {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.08),
+    transparent 28%,
+    transparent 72%,
+    rgba(255, 255, 255, 0.03)
+  );
+  mix-blend-mode: screen;
+  opacity: 0.18;
+}
+
+.frame {
+  position: absolute;
+  inset: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 28px;
+  pointer-events: none;
+}
+
+.orb {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(24px);
+  opacity: 0.74;
+}
+
+.orbOne {
+  top: -12vw;
+  right: -8vw;
+  width: 38vw;
+  height: 38vw;
+  min-width: 320px;
+  min-height: 320px;
+  background: radial-gradient(
+    circle,
+    rgba(239, 179, 7, 0.42) 0%,
+    rgba(239, 179, 7, 0.08) 52%,
+    transparent 74%
+  );
+}
+
+.orbTwo {
+  left: -7vw;
+  bottom: -11vw;
+  width: 34vw;
+  height: 34vw;
+  min-width: 280px;
+  min-height: 280px;
+  background: radial-gradient(
+    circle,
+    rgba(112, 112, 112, 0.34) 0%,
+    rgba(112, 112, 112, 0.06) 56%,
+    transparent 76%
+  );
+}
+
+.particle {
+  position: absolute;
+  border-radius: 999px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 233, 171, 0.96) 0%,
+    rgba(239, 179, 7, 0.24) 58%,
+    transparent 100%
+  );
+  box-shadow: 0 0 32px rgba(239, 179, 7, 0.4);
+  opacity: 0.2;
+}
+
+.content {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  min-height: 100%;
+  align-items: center;
+  justify-content: center;
+  padding:
+    clamp(28px, 4vw, 56px)
+    clamp(24px, 4vw, 52px)
+    clamp(132px, 18vh, 176px);
+}
+
+.panel {
+  position: relative;
+  width: min(780px, 100%);
+  padding: clamp(28px, 5vw, 54px);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 34px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.14),
+    rgba(255, 255, 255, 0.06)
+  );
+  box-shadow:
+    0 30px 90px rgba(0, 0, 0, 0.42),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(24px);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.badgeDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #ffdb78, #efb307);
+  box-shadow: 0 0 18px rgba(239, 179, 7, 0.7);
+}
+
+.title {
+  margin-top: 26px;
+  max-width: 9ch;
+  font-size: clamp(3.8rem, 11vw, 7rem);
+  line-height: 0.92;
+  letter-spacing: -0.08em;
+  font-weight: 700;
+}
+
+.titleAccent {
+  display: block;
+  background: linear-gradient(135deg, #f7f6f1 0%, #ffdb78 46%, #efb307 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  margin-top: 22px;
+  max-width: 58ch;
+  font-size: clamp(1rem, 2.5vw, 1.22rem);
+  line-height: 1.7;
+  color: rgba(240, 243, 248, 0.82);
+}
+
+.roleRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.rolePill {
+  padding: 12px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  background: rgba(8, 12, 18, 0.56);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  color: #f8f4de;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  margin-top: 34px;
+}
+
+.primaryButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px 24px;
+  border: 0;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #efb307, #ffdb78);
+  color: #101217;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow:
+    0 14px 36px rgba(239, 179, 7, 0.24),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.primaryButton:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 18px 44px rgba(239, 179, 7, 0.34),
+    inset 0 1px 0 rgba(255, 255, 255, 0.75);
+}
+
+.primaryButton svg {
+  width: 18px;
+  height: 18px;
+  transition: transform 160ms ease;
+}
+
+.primaryButton:hover svg {
+  transform: translateX(4px);
+}
+
+.supportText {
+  max-width: 32ch;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: rgba(240, 243, 248, 0.68);
+}
+
+.skipButton {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  z-index: 3;
+  padding: 12px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  background: rgba(7, 9, 14, 0.4);
+  color: rgba(255, 255, 255, 0.76);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.72rem;
+  cursor: pointer;
+  transition:
+    background 160ms ease,
+    color 160ms ease,
+    transform 160ms ease;
+}
+
+.skipButton:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.dock {
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+  left: 24px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  pointer-events: none;
+}
+
+.progressRail {
+  flex: 1;
+  min-width: 0;
+  height: 4px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.progressFill {
+  display: block;
+  width: 100%;
+  height: 100%;
+  transform-origin: left center;
+  background: linear-gradient(
+    90deg,
+    rgba(112, 112, 112, 0.7),
+    rgba(255, 219, 120, 0.92),
+    rgba(239, 179, 7, 1)
+  );
+  box-shadow: 0 0 24px rgba(239, 179, 7, 0.48);
+}
+
+.hint {
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.62);
+}
+
+.floatingCard {
+  position: absolute;
+  z-index: 2;
+  width: min(260px, 24vw);
+  padding: 18px 18px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 26px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.12),
+    rgba(255, 255, 255, 0.04)
+  );
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(18px);
+}
+
+.leftCard {
+  top: 16%;
+  left: clamp(18px, 5vw, 64px);
+}
+
+.topCard {
+  top: 14%;
+  right: clamp(18px, 5vw, 64px);
+}
+
+.bottomCard {
+  right: clamp(28px, 7vw, 92px);
+  bottom: 18%;
+}
+
+.cardLabel {
+  display: block;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.68rem;
+  color: rgba(255, 255, 255, 0.54);
+}
+
+.cardTitle {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #f7f6f1;
+}
+
+.cardDescription {
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: rgba(240, 243, 248, 0.72);
+}
+
+@media (max-width: 1120px) {
+  .floatingCard {
+    display: none;
+  }
+}
+
+@media (max-height: 980px) {
+  .content {
+    align-items: flex-start;
+    padding-top: 72px;
+    padding-bottom: 140px;
+  }
+
+  .panel {
+    width: min(740px, 100%);
+    padding: 30px 32px 34px;
+  }
+
+  .title {
+    margin-top: 20px;
+    font-size: clamp(3.2rem, 8vw, 6rem);
+  }
+
+  .subtitle {
+    margin-top: 18px;
+    font-size: clamp(0.98rem, 1.9vw, 1.1rem);
+    line-height: 1.58;
+  }
+
+  .roleRow {
+    margin-top: 20px;
+    gap: 10px;
+  }
+
+  .actions {
+    margin-top: 24px;
+  }
+}
+
+@media (max-height: 860px) {
+  .floatingCard {
+    display: none;
+  }
+
+  .content {
+    padding-top: 60px;
+    padding-bottom: 132px;
+  }
+
+  .panel {
+    width: min(700px, 100%);
+    padding: 26px 28px 30px;
+  }
+
+  .badge {
+    padding: 9px 12px;
+    font-size: 0.68rem;
+  }
+
+  .title {
+    margin-top: 18px;
+    font-size: clamp(2.9rem, 7vw, 5.3rem);
+  }
+
+  .subtitle {
+    margin-top: 16px;
+    line-height: 1.5;
+  }
+
+  .actions {
+    gap: 12px;
+    margin-top: 20px;
+  }
+
+  .supportText {
+    font-size: 0.86rem;
+  }
+}
+
+@media (max-width: 760px) {
+  .frame {
+    inset: 12px;
+    border-radius: 24px;
+  }
+
+  .panel {
+    border-radius: 28px;
+  }
+
+  .dock {
+    right: 16px;
+    bottom: 16px;
+    left: 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .skipButton {
+    top: 16px;
+    right: 16px;
+  }
+
+  .hint {
+    white-space: normal;
+  }
+}
+
+@media (max-width: 640px) {
+  .content {
+    align-items: flex-end;
+    padding: 20px 16px 116px;
+  }
+
+  .panel {
+    width: 100%;
+    padding: 24px;
+  }
+
+  .actions {
+    align-items: stretch;
+  }
+
+  .primaryButton {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .supportText {
+    max-width: none;
+  }
+
+  .roleRow {
+    gap: 10px;
+  }
+
+  .rolePill {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .primaryButton,
+  .skipButton,
+  .primaryButton svg {
+    transition: none;
+  }
+}

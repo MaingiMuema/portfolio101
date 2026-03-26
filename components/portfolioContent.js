@@ -209,6 +209,40 @@ export const contactCta = {
   popupTitle: "Let's discuss your next AI product, workflow system, or digital build.",
 };
 
+export const conceptLabTeaser = {
+  eyebrow: "Diffusion reel and current concept lab",
+  title: "Testing bold product ideas before they become full products.",
+  description:
+    "A looping diffusion-made reel of me opens into the concept lab where I am exploring agentic tax workflows, AI-generated education media, and other product systems in active development.",
+  cta: "Enter the concept lab",
+  video: "/diffusion-did.mp4",
+};
+
+export const conceptShowcase = [
+  {
+    name: "EasyUshuru",
+    category: "Agentic Tax Assistant",
+    summary:
+      "An agentic Kenya tax assistant featuring a web-first portal, robust conversational memory, and zero-friction compliance tools.",
+    description:
+      "EasyUshuru is a concept focused on simplifying tax guidance and compliance through a more intelligent, conversation-driven experience. The product direction combines a structured portal with memory-aware assistance so users can move through compliance tasks with less friction and more continuity.",
+    process:
+      "Current exploration includes tax workflow design, conversational memory behavior, trust-centered UI, and how agentic assistance can reduce complexity for Kenyan compliance journeys.",
+    video: "/EasyUshuru.mp4",
+  },
+  {
+    name: "Sparkmind",
+    category: "AI Video Generation Platform",
+    summary:
+      "An intelligent video generation platform that creates educational explainer videos from text prompts using AI-driven scripting, scene planning, narration, and motion workflows.",
+    description:
+      "Sparkmind explores how educational video production can move from manual assembly into a more intelligent generation pipeline. The concept is centered on turning a prompt into a usable explainer format with clearer structure, faster iteration, and stronger content scalability.",
+    process:
+      "I am testing the product flow, generation logic, and content-output experience needed to make text-to-explainer workflows feel practical for education use cases.",
+    video: "/Sparkmind.mp4",
+  },
+];
+
 export const projectPortfolio = [
   {
     name: "KFSS",
