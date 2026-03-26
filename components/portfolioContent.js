@@ -228,7 +228,8 @@ export const conceptShowcase = [
       "EasyUshuru is a concept focused on simplifying tax guidance and compliance through a more intelligent, conversation-driven experience. The product direction combines a structured portal with memory-aware assistance so users can move through compliance tasks with less friction and more continuity.",
     process:
       "Current exploration includes tax workflow design, conversational memory behavior, trust-centered UI, and how agentic assistance can reduce complexity for Kenyan compliance journeys.",
-    video: "/EasyUshuru.mp4",
+    video:
+      "https://drive.google.com/file/d/1EETdys7m3xbO-fd97wGZ28TfrNY75hEt/view?usp=sharing",
   },
   {
     name: "Sparkmind",
@@ -239,7 +240,8 @@ export const conceptShowcase = [
       "Sparkmind explores how educational video production can move from manual assembly into a more intelligent generation pipeline. The concept is centered on turning a prompt into a usable explainer format with clearer structure, faster iteration, and stronger content scalability.",
     process:
       "I am testing the product flow, generation logic, and content-output experience needed to make text-to-explainer workflows feel practical for education use cases.",
-    video: "/Sparkmind.mp4",
+    video:
+      "https://drive.google.com/file/d/1jq76pAhawW89Yr-IybGxYDAmINV-wi8p/view?usp=sharing",
   },
 ];
 

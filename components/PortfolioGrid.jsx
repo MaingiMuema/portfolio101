@@ -28,6 +28,11 @@ const homeCapabilityColumns = [
 ];
 const toolsGroup = capabilityGroups[4];
 
+function getDrivePreviewUrl(url) {
+  const match = url.match(/\/file\/d\/([^/]+)/);
+  return match ? `https://drive.google.com/file/d/${match[1]}/preview` : url;
+}
+
 export default function PortfolioGrid() {
   const [showAllProjects, setShowAllProjects] = useState(false);
   const [showContactPopup, setShowContactPopup] = useState(false);
@@ -219,15 +224,14 @@ export default function PortfolioGrid() {
             <div className="grid gap-6 p-3 md:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] md:p-6">
               <div className="overflow-hidden rounded-xl bg-gray-900/85">
                 <video
+                  src={conceptLabTeaser.video}
                   autoPlay
                   loop
                   muted
                   playsInline
-                  preload="auto"
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
-                >
-                  <source src={conceptLabTeaser.video} type="video/mp4" />
-                </video>
+                  preload="metadata"
+                  className="aspect-video h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                />
               </div>
               <div className="flex flex-col justify-center p-3 md:p-0">
                 <p className="text-sm font-semibold uppercase tracking-[0.25em] text-gray-800 mb-4">
@@ -374,14 +378,12 @@ export default function PortfolioGrid() {
               className="rounded-2xl bg-gradient-to-br from-[#707070] to-[#efb307] p-4 shadow-lg text-gray-900"
             >
               <div className="overflow-hidden rounded-xl bg-gray-900 mb-5">
-                <video
-                  controls
-                  playsInline
-                  preload="metadata"
-                  className="aspect-video w-full object-cover"
-                >
-                  <source src={concept.video} type="video/mp4" />
-                </video>
+                <iframe
+                  src={getDrivePreviewUrl(concept.video)}
+                  title={concept.name}
+                  allow="autoplay; fullscreen"
+                  className="aspect-video w-full border-0"
+                />
               </div>
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-gray-800 mb-3">
                 {concept.category}
