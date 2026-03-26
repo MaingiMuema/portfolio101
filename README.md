@@ -1,36 +1,105 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ManlikeMaingi Portfolio
+
+A personal portfolio and resume site for Mark Maingi built with Next.js 14, React 18, and Tailwind CSS. The experience opens with a fullscreen welcome animation, then transitions into a portfolio landing page with featured work, skills, contact actions, and a separate resume/about route.
+
+## Overview
+
+The current site includes:
+
+- A cinematic welcome screen with timed text transitions, particle effects, and mouse-reactive motion
+- A landing page with a typed role animation, profile image, skills summary, featured projects, and a contact popup
+- A responsive sticky navbar with navigation to the resume page
+- A dedicated `/resume` page with professional summary, skills, work history, education, certifications, and interests
+- A footer section with social links
+- Portfolio screenshots, profile media, and CV files served from `public/`
+
+## Routes
+
+| Route | Description |
+| --- | --- |
+| `/` | Main portfolio landing page |
+| `/resume` | Resume and detailed about page |
+
+## Tech Stack
+
+- Next.js 14 App Router
+- React 18
+- Tailwind CSS
+- Framer Motion
+- React Icons
+- React Type Animation
+- `next/font` local Geist fonts
+- Google Fonts `Roboto`
+
+## Project Structure
+
+```text
+app/
+  layout.tsx          Global metadata, fonts, and layout shell
+  page.tsx            Home route
+  resume/page.tsx     Resume route
+  globals.css         Global Tailwind and base styles
+
+components/
+  LandingPage.jsx        Landing page composition
+  Navbar.jsx             Sticky desktop/mobile navigation
+  PortfolioGrid.jsx      Hero cards, skills, featured projects, contact popup
+  About.jsx              Resume/about content
+  ContactSection.jsx     Footer social links
+  WelcomeAnimation.jsx   Intro animation logic
+  WelcomeAnimation.css   Intro animation styling
+  MouseAnimation.jsx     Custom cursor and trail effect
+
+public/
+  *.png / *.jpeg         Project thumbnails and profile image
+  Mark Maingi CV.*       Resume files stored as static assets
+```
 
 ## Getting Started
 
-First, run the development server:
+1. Install dependencies:
+
+```bash
+npm install
+```
+
+2. Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Available Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run dev
+npm run build
+npm run start
+npm run lint
+```
 
-## Learn More
+## Where To Update Content
 
-To learn more about Next.js, take a look at the following resources:
+- Update hero copy, rotating role titles, featured project links, social icons, and the contact popup in `components/PortfolioGrid.jsx`
+- Update resume/about content in `components/About.jsx`
+- Update navigation items in `components/Navbar.jsx`
+- Update the intro animation behavior in `components/WelcomeAnimation.jsx` and `components/WelcomeAnimation.css`
+- Update the custom cursor trail in `components/MouseAnimation.jsx`
+- Replace project thumbnails, profile image, or CV files in `public/`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Notes
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- The home page currently reveals the main content only after the intro animation completes
+- Featured projects are defined in a hardcoded array inside `components/PortfolioGrid.jsx`
+- The `/resume` route renders page content directly and does not currently link to the PDF or DOCX CV assets from the UI
 
-## Deploy on Vercel
+## Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This project can be deployed anywhere that supports Next.js. A standard production flow is:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm run build
+npm run start
+```

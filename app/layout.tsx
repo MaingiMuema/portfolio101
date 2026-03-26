@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Roboto } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 
@@ -12,10 +13,15 @@ const geistMono = localFont({
   variable: "--font-geist-mono",
   weight: "100 900",
 });
+const roboto = Roboto({
+  subsets: ["latin"],
+  weight: ["300", "400", "700"],
+});
 
 export const metadata: Metadata = {
-  title: "ManlikeMaingi",
-  description: "This is Mark Maingi's Porfolio.",
+  title: "Mark Maingi | AI-Native Product Builder",
+  description:
+    "Software engineer and product builder crafting AI systems, automation workflows, agentic products, and polished digital experiences.",
 };
 
 export default function RootLayout({
@@ -25,11 +31,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet" />
-      </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${roboto.className} antialiased`}
       >
         {children}
       </body>

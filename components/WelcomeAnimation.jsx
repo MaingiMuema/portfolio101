@@ -16,7 +16,17 @@ const WelcomeAnimation = ({ onAnimationComplete }) => {
       { appear: 4000, disappear: 7000 }, // My Portfolio
     ];
 
-    // Handle text sequence
+    const handleCompletion = () => {
+      if (!hasCompletedRef.current) {
+        hasCompletedRef.current = true;
+        const container = containerRef.current;
+        if (container) {
+          container.classList.add("fade-out");
+          setTimeout(onAnimationComplete, 1000);
+        }
+      }
+    };
+
     sequenceTimings.forEach((timing, index) => {
       const appearTimeout = setTimeout(() => {
         setCurrentText(index);
@@ -35,18 +45,7 @@ const WelcomeAnimation = ({ onAnimationComplete }) => {
         clearTimeout(disappearTimeout);
       };
     });
-  }, []);
-
-  const handleCompletion = () => {
-    if (!hasCompletedRef.current) {
-      hasCompletedRef.current = true;
-      const container = containerRef.current;
-      if (container) {
-        container.classList.add("fade-out");
-        setTimeout(onAnimationComplete, 1000);
-      }
-    }
-  };
+  }, [onAnimationComplete]);
 
   useEffect(() => {
     const handleMouseMove = (e) => {
