@@ -34,3 +34,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# large local video masters, kept out of the deployment
+/public/Sparkmind.mp4
+/public/EasyUshuru.mp4
