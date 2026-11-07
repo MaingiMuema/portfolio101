@@ -160,7 +160,7 @@ export type Role = {
   links?: RoleLink[];
 };
 
-export const experience: Role[] = [
+const experienceData: Role[] = [
   {
     role: "Founder & Developer",
     company: "Learnwise Technologies",
@@ -242,6 +242,28 @@ export const experience: Role[] = [
     focus: ["Financial services", "Prototype", "UI engineering"],
   },
 ];
+
+// Significance order: flagship ownership first, then delivery and client work.
+const experienceOrder = [
+  "VectorAfriq Properties",
+  "Learnwise Technologies",
+  "CargoLink",
+  "Forecast 254",
+  "Aminiblock",
+  "Brandlogs",
+  "Bountiful Safaris",
+  "Sanlam",
+];
+
+export const experience: Role[] = experienceOrder.map((company) => {
+  const role = experienceData.find((entry) => entry.company === company);
+
+  if (!role) {
+    throw new Error(`Unknown experience entry: ${company}`);
+  }
+
+  return role;
+});
 
 export const profile = {
   heading: "Computer science foundations. Industry-built range.",

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { caseStudies } from "@/content/work";
+import { selectedWork } from "@/content/work";
 import { navigation, site } from "@/content/site";
 
 export default function Footer() {
@@ -58,14 +58,25 @@ export default function Footer() {
                 Selected work
               </h2>
               <ul className="mt-5 space-y-3 text-sm">
-                {caseStudies.slice(0, 5).map((study) => (
-                  <li key={study.slug}>
-                    <Link
-                      href={`/work/${study.slug}`}
-                      className="text-white/65 transition-colors hover:text-white"
-                    >
-                      {study.name}
-                    </Link>
+                {selectedWork.map((project) => (
+                  <li key={project.name}>
+                    {project.external ? (
+                      <a
+                        href={project.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-white/65 transition-colors hover:text-white"
+                      >
+                        {project.name} ↗
+                      </a>
+                    ) : (
+                      <Link
+                        href={project.href}
+                        className="text-white/65 transition-colors hover:text-white"
+                      >
+                        {project.name}
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>

@@ -18,6 +18,21 @@ export type CaseStudy = {
   featured: boolean;
 };
 
+// Significance order across the whole portfolio. Case studies and live products
+// share one ranking so every listing on the site reads the same way.
+const projectOrder = [
+  "PropertyFinder",
+  "VectorAfriq",
+  "Akiba Plus",
+  "Learnwise Technologies",
+  "Lumo",
+  "Credwave",
+  "Viva Global",
+  "LeftFoot Sports",
+  "KFSS",
+  "The Coded Tomorrow",
+];
+
 const caseStudyData: Omit<CaseStudy, "index">[] = [
   {
     slug: "kfss",
@@ -332,7 +347,12 @@ export const caseStudies: CaseStudy[] = studyOrder.map((slug, position) => {
     throw new Error(`Unknown case study: ${slug}`);
   }
 
-  return { ...study, index: String(position + 1).padStart(2, "0") };
+  const rank = projectOrder.indexOf(study.name);
+
+  return {
+    ...study,
+    index: String(rank > -1 ? rank + 1 : position + 1).padStart(2, "0"),
+  };
 });
 
 export const moreProjects = [
@@ -456,6 +476,70 @@ export const moreProjects = [
     image: "/SCFF.png",
   },
 ];
+
+export type Project = {
+  name: string;
+  category: string;
+  summary: string;
+  image?: string;
+  href: string;
+  external: boolean;
+  caseStudy?: CaseStudy;
+};
+
+const projectEntries = new Map<string, Project>();
+
+for (const study of caseStudies) {
+  projectEntries.set(study.name, {
+    name: study.name,
+    category: study.category,
+    summary: study.summary,
+    image: study.image,
+    href: `/work/${study.slug}`,
+    external: false,
+    caseStudy: study,
+  });
+}
+
+for (const project of moreProjects) {
+  projectEntries.set(project.name, {
+    name: project.name,
+    category: project.category,
+    summary: project.summary,
+    image: project.image,
+    href: project.href,
+    external: true,
+  });
+}
+
+const rankedProjects: Project[] = [];
+const rankedNames = new Set<string>();
+
+for (const name of projectOrder) {
+  const project = projectEntries.get(name);
+
+  if (!project) {
+    throw new Error(`Unknown project in significance order: ${name}`);
+  }
+
+  rankedProjects.push(project);
+  rankedNames.add(name);
+}
+
+// Anything not named in the ranking follows in its existing order.
+projectEntries.forEach((project, name) => {
+  if (!rankedNames.has(name)) {
+    rankedProjects.push(project);
+  }
+});
+
+export const projects: Project[] = rankedProjects;
+
+export const selectedWork = projects.slice(0, 5).map((project) => ({
+  name: project.name,
+  href: project.href,
+  external: project.external,
+}));
 
 export const featuredWork = caseStudies.filter((study) => study.featured);
 
