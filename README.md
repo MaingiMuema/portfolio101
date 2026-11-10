@@ -36,6 +36,11 @@ components/
 content/
   site.ts                Identity, positioning, practice areas, experience, profile
   work.ts                Case studies, project archive, homepage featured selection
+  resume.ts              CV dossier content, written per application
+
+scripts/
+  export-cv.mjs          Exports the CV content to .cv-build/resume.json
+  build-cv-docx.py       Builds the Word version from that JSON
 
 public/
   *.png / *.jpeg         Project and profile imagery
@@ -47,7 +52,23 @@ public/
 
 - **Positioning, capabilities, experience, education, concept lab:** `content/site.ts`
 - **Case studies and the project archive:** `content/work.ts` — adding an entry with `featured: true` adds it to the homepage, the archive, the résumé and the sitemap, and generates its route.
+- **CV:** `content/resume.ts` holds the whole CV — profile, what I do, selected work, experience, skills and the record. `/resume` renders it, and the PDF and Word files are built from the same content, so there is one place to edit.
 - **Imagery and CV:** replace files in `public/`. Keep the photo at `Mark.jpeg` and project images at the paths referenced in `content/work.ts`.
+
+## Rebuilding the CV
+
+The readable source is `content/resume.ts`. After editing it:
+
+```bash
+# 1. Regenerate the print-ready PDF from the live /resume route
+npm run build && npm run start
+chrome --headless=new --disable-gpu --no-pdf-header-footer \
+  --print-to-pdf="public/Mark Maingi CV.pdf" http://localhost:3000/resume
+
+# 2. Regenerate the Word version
+node scripts/export-cv.mjs
+python scripts/build-cv-docx.py .cv-build/resume.json "public/Mark Maingi CV.docx"
+```
 
 ## Local development
 

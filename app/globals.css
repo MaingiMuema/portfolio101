@@ -128,6 +128,20 @@
     transform: translateY(0);
   }
 
+  /* Two-up blocks in the CV. Explicit rather than breakpoint-driven so the
+     printed document and the screen agree. */
+  .cv-duo {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem 2.5rem;
+  }
+
+  @media (min-width: 640px) {
+    .cv-duo {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
   .grid-lines {
     background-image:
       linear-gradient(to right, rgba(255, 255, 255, 0.055) 1px, transparent 1px),
@@ -161,11 +175,12 @@
   }
 }
 
-@media print {
-  @page {
-    margin: 14mm;
-  }
+@page {
+  size: A4;
+  margin: 13mm 15mm;
+}
 
+@media print {
   html,
   body {
     background: #ffffff !important;
@@ -181,8 +196,73 @@
     color: #000000;
   }
 
-  .print-block {
+  .print-block,
+  .cv-avoid {
     break-inside: avoid;
     page-break-inside: avoid;
+  }
+
+  /* The CV is the one route designed to leave the browser as a document. */
+  .cv-doc {
+    max-width: none !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+    /* Print type runs a touch tighter than the screen so the document lands on
+       three pages instead of spilling a sliver onto a fourth. */
+    zoom: 0.87;
+  }
+
+  .cv-screen,
+  .skip-link {
+    display: none !important;
+  }
+
+  /* Single column in print: multi-column grids fragment unreliably on paper. */
+  .cv-duo {
+    grid-template-columns: 1fr !important;
+    gap: 0.6rem !important;
+  }
+
+  /* The closing strip is the exception: four short rows suit two columns. */
+  .cv-doc .cv-details {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    column-gap: 9mm !important;
+  }
+
+  .cv-panel {
+    background: transparent !important;
+    border-color: #b8b1a1 !important;
+  }
+
+  .cv-doc a {
+    text-decoration: none;
+  }
+
+  /* Headings should never sit alone at the foot of a page. */
+  .cv-head {
+    break-inside: avoid;
+    break-after: avoid;
+  }
+
+  .cv-doc h2,
+  .cv-doc h3 {
+    break-after: avoid;
+  }
+
+  /* Tighter rhythm on paper: the document should read as three pages, not five. */
+  .cv-doc section {
+    margin-top: 3.5mm !important;
+    padding-top: 2mm !important;
+  }
+
+  .cv-doc article,
+  .cv-doc li,
+  .cv-doc dl > div {
+    padding-top: 1.4mm !important;
+    padding-bottom: 1.4mm !important;
+  }
+
+  .cv-doc h1 {
+    margin-top: 3mm !important;
   }
 }

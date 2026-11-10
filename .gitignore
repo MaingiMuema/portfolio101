@@ -13,6 +13,9 @@
 /.next/
 /out/
 
+# generated CV build artifacts
+/.cv-build/
+
 # production
 /build
 

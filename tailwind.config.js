@@ -15,6 +15,8 @@ module.exports = {
         "paper-deep": "#e6e1d5",
         amber: "#e6b04b",
         "amber-soft": "#f3d08a",
+        clay: "#8f4720",
+        "clay-soft": "#b06a3c",
       },
       fontFamily: {
         sans: ["var(--font-sans)", "system-ui", "sans-serif"],
